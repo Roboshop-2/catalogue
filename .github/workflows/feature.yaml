@@ -8,7 +8,7 @@ on:
 jobs:
   feature-workflow:
     if: github.ref_name != 'main'
-    uses: snraju98/workflows/.github/workflows/nodejs-eks-feature.yaml@main
+    uses: Roboshop-2/workflows/.github/workflows/nodejs-eks-feature.yaml@main
     with:
       project: roboshop
       component: catalogue
