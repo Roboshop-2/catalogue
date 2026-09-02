@@ -5,16 +5,22 @@ on:
     
     # branches-ignore:
     #   - 'main'
+permissions:
+  contents: write
+  pull-requests: write
+  statuses: write 
 jobs:
   feature-workflow:
     if: github.ref_name != 'main'
-    uses: snraju98/workflows/.github/workflows/nodejs-eks-feature.yaml@main
+    uses: Roboshop-2/workflows/.github/workflows/nodejs-eks-feature.yaml@main
     with:
       project: roboshop
       component: catalogue
+    secrets: inherit
+  
 
   main-workflow:
     runs-on:  ubuntu-latest
     steps:
       - name: main workflow
-        run: echo "this runs when a commit comes to main branch"  
+        run: echo "this runs when a commit comes to main branch" 
